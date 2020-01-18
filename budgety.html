@@ -1,0 +1,111 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link type="text/css" rel="stylesheet" href="css/budgety.css">
+        <title>Budgety</title>
+    </head>
+    <body>
+
+        <div class="navbar">
+            <button class="btn btn__back"><i class="fa fa-chevron-left" style="font-size: 16px;"></i></button>
+        </div>
+        
+        <div class="top">
+            <div class="budget">
+                <div class="budget__title">
+                    <span class="budget__title--month"></span>
+                </div>
+                
+                <div class="budget__value"></div>
+                
+                <div class="budget__income clearfix">
+                    <div class="budget__income--text">Income</div>
+                    <div class="right">
+                        <div class="budget__income--value"></div>
+                        <div class="budget__income--percentage">&nbsp;</div>
+                    </div>
+                </div>
+                
+                <div class="budget__expenses clearfix">
+                    <div class="budget__expenses--text">Expenses</div>
+                    <div class="right clearfix">
+                        <div class="budget__expenses--value"></div>
+                        <div class="budget__expenses--percentage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom">
+
+            <div class="add">
+                <div class="add__container">
+
+                    <select class="add__type">
+                        <option value="inc" selected>+</option>
+                        <option value="exp">-</option>
+                    </select>
+
+                    <input type="text" class="add__description" placeholder="Add description">
+                    <input type="number" class="add__value" placeholder="Value">
+
+                    <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+
+                </div>
+            </div>
+
+            <div class="date">
+                <div class="date__container">
+                    <!-- <div class="form-group"> -->
+                    <label>From:</label>
+                    <input type="date" class="from__date form-control" id="date__from" placeholder="From" onchange="searchWithDate();"/>
+                    <!-- </div> -->
+                    <!-- <div class="form-group"> -->
+                    <label>To:</label>
+                    <input type="date" class="to__date form-control" id="date__to" placeholder="To" onchange="searchWithDate()"/>
+                    <!-- </div> -->
+                </div>
+            </div>
+            
+            <div class="container clearfix">
+                
+                <div class="income">
+                    <h2 class="income__title">Income</h2>
+                    
+                    <div class="income__list" id="list">
+                    </div>
+                </div>
+                
+                
+                
+                <div class="expenses">
+                    <h2 class="expenses__title">Expenses</h2>
+                    
+                    <div class="expenses__list">
+                    </div>
+                </div>
+            </div>                     
+        </div>
+        
+        <div class="main container user_table">
+            <table id="customers">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Income</th>
+                        <th class="text-center">Expense</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="table__row">
+                </tbody>
+            </table>
+        </div>
+
+        <script src="js/budgety.js"></script>
+    </body>
+</html>
